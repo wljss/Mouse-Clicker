@@ -132,7 +132,7 @@ class MouseClicker:
         frame = ctk.CTkFrame(self.window)
         frame.pack(pady=10, padx=30, fill="x")
         ctk.CTkLabel(
-            frame, text="F6 开始    │    F7 停止",
+            frame, text="F6 开始 / 停止",
             font=ctk.CTkFont(size=13),
         ).pack(pady=8)
 
@@ -192,11 +192,15 @@ class MouseClicker:
 
     def _on_key(self, key):
         if key == pynput_keyboard.Key.f6:
-            self.window.after(0, self.start)
-        elif key == pynput_keyboard.Key.f7:
-            self.window.after(0, self.stop)
+            self.window.after(0, self.toggle)
 
     # ─────────────────── 启停 ───────────────────
+
+    def toggle(self):
+        if self.clicking:
+            self.stop()
+        else:
+            self.start()
 
     def start(self):
         if self.clicking:

@@ -4,6 +4,10 @@
 
 想找个鼠标连点器，就打算自己写一个。
 
+如果能帮助到你那就太棒了。
+
+有什么需求可以告诉我来改进QWQ。
+
 导出python环境指令：
 
 conda env export > environment.yaml
